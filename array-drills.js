@@ -26,7 +26,7 @@ function maxSumArr(arr) {
       result += arr[i];
     }
     if (result > max) max = result;
-    
+
     arr.pop();
   }
 
@@ -43,11 +43,30 @@ Merge ARrays
 find smaller lengthed array 
 */
 
-function mergeArrays(arr1, arr2){
+function mergeArrays(arr1, arr2) {
   let combined = [...arr1, ...arr2];
-  return combined.sort((a,b) => a - b );
+  return combined.sort((a, b) => a - b);
 }
 
-console.log(mergeArrays([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
+console.log(mergeArrays([1, 3, 6, 8, 11], [2, 3, 5, 8, 9, 10]));
 //[1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]
 //O(n)
+
+
+
+/*
+Remove Characters
+*/
+
+function removeChars(str, filter) {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if(!filter.includes(str[i])) result += str[i];
+  }
+  return result;
+}
+
+output = removeChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou');
+console.log(output);
+// O(n)
+
