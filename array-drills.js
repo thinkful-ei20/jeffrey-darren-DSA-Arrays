@@ -61,7 +61,7 @@ Remove Characters
 function removeChars(str, filter) {
   let result = '';
   for (let i = 0; i < str.length; i++) {
-    if(!filter.includes(str[i])) result += str[i];
+    if (!filter.includes(str[i])) result += str[i];
   }
   return result;
 }
@@ -74,18 +74,45 @@ console.log(output);
 Remove Characters
 */
 
-function products(arr){
+function products(arr) {
   let results = [];
   for (let i = 0; i < arr.length; i++) {
     let result = 1;
     for (let j = 0; j < arr.length; j++) {
-      if(j !== i){
+      if (j !== i) {
         result *= arr[j];
-      }       
+      }
     }
-    results.push(result); 
+    results.push(result);
   }
   return results;
 }
-console.log(products([1,3,9,4]));
+console.log(products([1, 3, 9, 4]));
 
+
+
+function twoDArray(arr) {
+  for (let i = 0; i < arr.length; i++)
+    for (let j = 0; j < arr[i].length; j++) {
+      // console.log(arr[i][j]);
+      if (arr[i][j] === 0) {
+        //for row set to 0
+        for (let k = 0; k < arr[i].length; k++) arr[i][k] = 0;
+        for (let g = 0; g < arr.length; g++) arr[g][j] = 0;
+        // for column set to 0
+        // break
+        //console.log(arr[i][j]);
+      }
+    }
+
+  return arr;
+}
+
+output = twoDArray([
+  [1, 0, 1, 1, 0,],
+  [0, 1, 1, 1, 0],
+  [1, 1, 1, 1, 1],
+  [1, 0, 1, 1, 1],
+  [1, 1, 1, 1, 1,]
+]);
+console.log(output);
