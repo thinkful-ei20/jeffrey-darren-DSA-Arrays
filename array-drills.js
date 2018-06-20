@@ -70,3 +70,22 @@ output = removeChars('Battle of the Vowels: Hawaii vs. Grozny', 'aeiou');
 console.log(output);
 // O(n)
 
+/*
+Remove Characters
+*/
+
+function products(arr){
+  let results = [];
+  for (let i = 0; i < arr.length; i++) {
+    let result = 1;
+    for (let j = 0; j < arr.length; j++) {
+      if(j !== i){
+        result *= arr[j];
+      }       
+    }
+    results.push(result); 
+  }
+  return results;
+}
+console.log(products([1,3,9,4]));
+
