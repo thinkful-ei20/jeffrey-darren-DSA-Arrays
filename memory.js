@@ -24,7 +24,7 @@ class Memory {
       return;
     }
 
-    if(fromIdx> toIdx) {
+    if(fromIdx > toIdx) {
       // Iterate forwards
       for(let i = 0; i < size; i++) {
         this.set(toIdx + i, this.get(fromIdx + i));
