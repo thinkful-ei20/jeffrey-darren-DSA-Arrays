@@ -3,12 +3,55 @@
 const Array = require('./Array');
 
 function main() {
-  Array.SIZE_RATIO = 3;
+  Array.SIZE_RATIO = 5;
 
   let arr = new Array();
 
-  arr.push(3);
+  console.log(arr);
 
+  arr.push(3);
+  console.log(arr);
+
+  arr.push(3);
+  console.log(arr);
+
+  arr.push(3);
+  console.log(arr);
+
+  arr.push(3);
+  console.log(arr);
+
+  arr.push(3);
+  console.log(arr);
+
+  arr.push(3);
+  console.log(arr);
+
+  arr.push(3);
+  console.log(arr);
+
+  arr.push(3);
+  console.log(arr);
+
+  arr.push(3);
+  console.log(arr);
+
+  arr.push(3);
+  console.log(arr);
+
+  arr.pop();
+  console.log(arr);
+
+  arr.pop();
+  console.log(arr);
+
+  arr.pop();
+  console.log(arr);
+
+  arr.pop();
+  console.log(arr);
+
+  arr.pop();
   console.log(arr);
 }
 
