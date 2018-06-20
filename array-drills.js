@@ -92,27 +92,32 @@ console.log(products([1, 3, 9, 4]));
 
 
 function twoDArray(arr) {
-  for (let i = 0; i < arr.length; i++)
+  let result = arr.map((a) => a.slice());
+  for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr[i].length; j++) {
-      // console.log(arr[i][j]);
+      console.log(`ROW: ${i} | COLUMN: ${j} | VALUE: ${arr[i][j]}`);
       if (arr[i][j] === 0) {
-        //for row set to 0
-        for (let k = 0; k < arr[i].length; k++) arr[i][k] = 0;
-        for (let g = 0; g < arr.length; g++) arr[g][j] = 0;
-        // for column set to 0
-        // break
-        //console.log(arr[i][j]);
+        for (let k = 0; k < arr[i].length; k++) {
+          result[i][k] = 0;
+          console.log(` ROW: ${i} | COLUMN: ${k} | VALUE: ${arr[i][k]}`);
+        }
+
+        for (let g = 0; g < arr.length; g++) {
+          result[g][j] = 0;
+          console.log(` ROW: ${g} | COLUMN: ${j} | VALUE: ${arr[g][j]}`);
+        }
       }
     }
+  }
 
-  return arr;
+  return result;
 }
 
 output = twoDArray([
-  [1, 0, 1, 1, 0,],
+  [1, 0, 1, 1, 0],
   [0, 1, 1, 1, 0],
   [1, 1, 1, 1, 1],
   [1, 0, 1, 1, 1],
-  [1, 1, 1, 1, 1,]
+  [1, 1, 1, 1, 1]
 ]);
 console.log(output);
