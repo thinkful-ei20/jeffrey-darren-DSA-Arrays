@@ -37,3 +37,17 @@ output = maxSumArr([4, 6, -3, 5, -2, 1]);
 console.log(output);
 // O(n)
 
+
+/*
+Merge ARrays
+find smaller lengthed array 
+*/
+
+function mergeArrays(arr1, arr2){
+  let combined = [...arr1, ...arr2];
+  return combined.sort((a,b) => a - b );
+}
+
+console.log(mergeArrays([1, 3, 6, 8, 11],[2, 3, 5, 8, 9, 10]));
+//[1, 2, 3, 3, 5, 6, 8, 8, 9, 10, 11]
+//O(n)
