@@ -121,3 +121,17 @@ output = twoDArray([
   [1, 1, 1, 1, 1]
 ]);
 console.log(output);
+// O(n^3)
+
+
+// String Roatation
+
+function stringRotation(str1,str2){
+  if(str1.length !== str2.length){
+    return false;
+  }
+  return (str1+str1).includes(str2);
+}
+
+console.log(stringRotation('amazon', 'azonam'));
+//O(1)
