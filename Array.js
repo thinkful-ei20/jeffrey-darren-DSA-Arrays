@@ -45,5 +45,26 @@ class Array {
     this.length--;
     return value;
   }
+
+  insert(index, value){
+    if(index < 0 || index >= this.length){
+      throw new Error('Index error');
+    }
+    if(this.length >= this._capacity) {
+      this._resize((this.length + 1) * Array.SIZE_RATIO);
+    }
+
+    memory.copy(this.ptr + index, this.ptr + index + 1, this.length - index -1);
+    memory.set(this.ptr + index, value);
+    this.length++;
+  }
+
+  remove(index){
+    if(index < 0 || index >= this.length){
+      throw new Error('Index error');
+    }
+    memory.copy(this.ptr + index, this.ptr + index + 1, this.length - index - 1);
+    this.length--;
+  }
 }
 Array.SIZE_RATIO = 3;
